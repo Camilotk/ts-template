@@ -1,4 +1,4 @@
-type Board = number[][];
+type Board = boolean[][];
 
 function createBoard(rows: number, cols: number): Board {
     let board: Board = new Array(rows);
@@ -23,16 +23,13 @@ function countNeighbors(board: Board, row: number, col: number): number {
     return count;
 }
 
-function tick(board: Board, maxAge: number): Board {
+function tick(board: Board): Board {
     let newBoard = createBoard(board.length, board[0].length);
     for (let i = 0; i < board.length; i++) {
         for (let j = 0; j < board[0].length; j++) {
             let neighbors = countNeighbors(board, i, j);
-            if (board[i][j] > 0 && (neighbors === 2 || neighbors === 3)) {
-                newBoard[i][j] = board[i][j] + 1;
-                if (newBoard[i][j] > maxAge) {
-                    newBoard[i][j] = 0;
-                }
+            if (board[i][j] && (neighbors === 2 || neighbors === 3)) {
+                newBoard[i][j] = true;
             } else if (board[i][j] === 0 && neighbors === 3) {
                 newBoard[i][j] = 1;
             }
