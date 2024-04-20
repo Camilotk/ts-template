@@ -19,9 +19,8 @@ Para executar este projeto, você precisará ter o Node.js, Volta e Yarn instala
 
 1. Clone este repositório para o seu sistema local.
 2. Navegue até o diretório do projeto no terminal.
-3. Execute `volta run` para usar a versão especificada no package.json das ferramentas.
-4. Execute `yarn install` para instalar todas as dependências do projeto.
-5. Execute `yarn dev` para iniciar o script do Jogo da Vida.
-6. Execute o JavaScript gerado com `node dist/index.js`.
+3. Execute `yarn install` para instalar todas as dependências do projeto.
+4. Execute `yarn dev` para iniciar o script do Jogo da Vida.
+5. Execute o JavaScript gerado com `node dist/index.js`.
 
 Esperamos que você ache este template útil para seus projetos TypeScript!
