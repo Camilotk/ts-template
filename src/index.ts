@@ -52,6 +52,14 @@ function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function printMessage(message: string, spaces: number): void {
+    for (let i = 0; i < spaces; i++) {
+        console.log();
+    }
+
+    console.log('\x1b[31m%s\x1b[0m', message);
+}
+
 async function gameOfLife(rows: number, cols: number, maxGenerations: number): Promise<void> {
     let board = createBoard(rows, cols);
     let generations = 0;
@@ -62,7 +70,7 @@ async function gameOfLife(rows: number, cols: number, maxGenerations: number): P
         generations++;
         await sleep(1000);
     }
-    console.log("Max generations reached. Game over.");
+    printMessage("Max generations reached. Game over.", rows);
 }
 
-gameOfLife(10, 10, 100);
+gameOfLife(10, 30, 50);
