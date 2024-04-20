@@ -3,7 +3,7 @@ type Board = boolean[][];
 function createBoard(rows: number, cols: number): Board {
     let board: Board = new Array(rows);
     for (let i = 0; i < rows; i++) {
-        board[i] = new Array(cols).fill(false).map(() => Math.random() > 0.5);
+        board[i] = new Array(cols).fill(false).map(() => Math.random() > 0.8);
     }
     return board;
 }
@@ -62,4 +62,4 @@ async function gameOfLife(rows: number, cols: number, steps: number): Promise<vo
     }
 }
 
-gameOfLife(10, 10, 100);
+gameOfLife(10, 20, 100);
